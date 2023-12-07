@@ -47,3 +47,26 @@ int _print_percent(va_list args)
 	putchar('%');
 	return (1);
 }
+
+/**
+ * _print_integer - the function name to print integer
+ * @args: the function parameter
+ * Return: count
+ */
+
+int _print_integer(va_list args)
+{
+	int count = 0;
+	int i;
+	char str[20];
+	int num = va_arg(args, int);
+
+	snprintf(str, sizeof(str), "%d", num);
+
+	for (i = 0; str[i] != '\0'; ++i)
+	{
+		_putchar(str[i]);
+		count++;
+	}
+	return (count);
+}
